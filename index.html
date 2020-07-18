@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="components-demo">
+      <hidataro-component message="warn"></hidataro-component>
+    </div>
+
+    <script>
+      // button-counter と呼ばれる新しいコンポーネントを定義します
+      Vue.component("hidataro-component", {
+        props: ["message"],
+        data: function() {
+          return {
+            name: "hida taro"
+          };
+        },
+        template: "<div> {{ name }} is {{ message }}.</div>"
+      });
+
+      new Vue({ el: "#components-demo" });
+    </script>
+  </body>
+</html>
